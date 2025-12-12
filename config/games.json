@@ -234,6 +234,11 @@
     "imgSrc": "projects/draw-the-hill/icons/icon-512.png",
     "title": "Draw the Hill"
   },
+   {
+    "link": "projects/drivemad/index.html",
+    "imgSrc": "projects/drivemad/drivemad.webp",
+    "title": "Drive Mad"
+  },
   {
     "link": "projects/ducklife1/index.html",
     "imgSrc": "projects/ducklife1/ducklife.png",
