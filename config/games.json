@@ -430,6 +430,11 @@
     "title": "Mario"
   },
   {
+    "link": "projects/madalinstuntcars/index.html",
+    "imgSrc": "projects/madalinstuntcars/msc.png",
+    "title": "Madalin stunt cars 2"
+  },
+  {
     "link": "projects/matrixrampage/index.html",
     "imgSrc": "projects/matrixrampage/matrixrampage.jpg",
     "title": "Matrix Rampage"
