@@ -691,6 +691,11 @@
     "title": "Temple Run 2"
   },
   {
+    "link": "projects/territorial/index.html",
+    "imgSrc": "projects/territorial/territorial.io.webp",
+    "title": "Territorial.io"
+  },
+  {
     "link": "projects/thebattle/index.html",
     "imgSrc": "projects/thebattle/thebattle.png",
     "title": "The Battle"
