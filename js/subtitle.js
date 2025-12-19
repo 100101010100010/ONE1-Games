@@ -2,7 +2,7 @@ function getRandomGreeting() {
   var greetings = [
     "Bubber is the goat",
     "Beep boop! Are you a robot?",
-    " jablicky asparagus timmypop",
+    "jablicky asparagus timmypop",
     "How many sides does a circle have?",
     "You can read btw",
     "Made you look!",
