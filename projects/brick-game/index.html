@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>9999-in-1 Ultimate Replica</title>
     <style>
-        :root { --lcd-on: #1a1a1a; --lcd-off: #8b957e; --case: #f1c40f; }
+        :root { --lcd-on: #1a1a1a; --lcd-off: #8b957e; --case: #345beb; }
         body { background: #111; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; font-family: 'Courier New', monospace; overflow: hidden; touch-action: none; }
         
-        #handheld { background: var(--case); padding: 30px; border-radius: 20px 20px 100px 100px; border: 6px solid #d4ac0d; box-shadow: 15px 15px 0px #000; width: 380px; position: relative; }
+        #handheld { background: var(--case); padding: 30px; border-radius: 20px 20px 100px 100px; border: 6px solid ; box-shadow: 15px 15px 0px #000; width: 380px; position: relative; }
         
         #screen-border { background: var(--lcd-off); padding: 12px; border: 12px solid #333; display: flex; box-shadow: inset 0 0 15px rgba(0,0,0,0.4); border-radius: 5px; }
         canvas { image-rendering: pixelated; background: transparent; }
@@ -19,7 +19,7 @@
         .main-controls { margin-top: 40px; display: flex; justify-content: space-between; align-items: center; padding: 0 10px; }
 
         .d-pad { display: grid; grid-template-columns: repeat(3, 50px); grid-template-rows: repeat(3, 50px); }
-        .btn { background: #c0392b; border: none; border-radius: 50%; color: #fff; cursor: pointer; box-shadow: 0 5px #7b241c; font-weight: bold; position: relative; -webkit-tap-highlight-color: transparent; }
+        .btn { background: #f1c40f; border: none; border-radius: 50%; color: #fff; cursor: pointer; box-shadow: 0 5px #826a0c; font-weight: bold; position: relative; -webkit-tap-highlight-color: transparent; }
         .btn:active { transform: translateY(3px); box-shadow: 0 2px #7b241c; }
         
         .btn-up { grid-column: 2; grid-row: 1; }
@@ -28,12 +28,12 @@
         .btn-down { grid-column: 2; grid-row: 3; }
 
         .action-zone { display: flex; flex-direction: column; align-items: center; }
-        .btn-rot { width: 95px; height: 95px; background: #2c3e50; box-shadow: 0 6px #1a252f; font-size: 14px; border-radius: 50%; }
-        .btn-rot:active { box-shadow: 0 2px #1a252f; }
+        .btn-rot { width: 95px; height: 95px; background: #f1c40f; box-shadow: 0 6px #826a0c; font-size: 14px; border-radius: 50%; }
+        .btn-rot:active { box-shadow: 0 2px #826a0c; }
 
         .sys-row { display: flex; justify-content: center; gap: 20px; margin-top: 25px; }
-        .btn-sys { width: 80px; height: 35px; border-radius: 10px; font-size: 10px; background: #444; box-shadow: 0 4px #222; }
-        .btn-start { background: #1e8449; box-shadow: 0 4px #145a32; width: 110px; }
+        .btn-sys { width: 80px; height: 35px; border-radius: 10px; font-size: 10px; background: #f1c40f; box-shadow: 0 4px #826a0c; }
+        .btn-start { background: #f1c40f; box-shadow: 0 4px #826a0c; width: 110px; }
         
         /* Adjusted game title style for longer words */
         #gm { margin: 0; font-size: 18px; line-height: 1.1; word-wrap: break-word; text-transform: uppercase; }
