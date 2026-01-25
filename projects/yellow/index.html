@@ -1,270 +1,134 @@
-<!DOCTYPE html>
+<Module>
 
 
 <!-- Ultimate Game Stash file--> 
 <!-- For the regularly updating doc go to https://docs.google.com/document/d/1_FmH3BlSBQI7FGgAQL59-ZPe8eCxs35wel6JUyVaG8Q/ -->
+<!-- Made by Individual--> 
 
 
-<html lang="en-us">
-<base href="https://cdn.jsdelivr.net/gh/bubbls/Tanuki-Sunset@master/">
+
+<Module>
+<html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <body>
-  <div id="unityContainer"></div>
-</body>
-  <title>Unity  Player </title>
-  <script src="Build/UnityLoader.js"></script>
-  <script>
-    window.mergedBlobUrls = {};
-    window.assetsReady = false;
-
-    async function mergeSplitFile(fileUrlBase, numParts = 3) {
-      const partUrls = Array.from({ length: numParts }, (_, i) => 
-        `${fileUrlBase}.part${i + 1}`
-      );
-
-      try {
-        const responses = await Promise.all(
-          partUrls.map(url => fetch(url))
-        );
-
-        if (responses.some(r => !r.ok)) {
-          return null;
-        }
-
-        const parts = await Promise.all(
-          responses.map(r => r.arrayBuffer())
-        );
-
-        const combinedBlob = new Blob(parts, {
-          type: 'application/octet-stream'
-        });
-
-        return URL.createObjectURL(combinedBlob);
-      } catch (error) {
-        return null;
-      }
-    }
-
-    function setupXHRInterceptor() {
-      if (window.xhrInterceptorInstalled) {
-        return;
-      }
-      
-      const originalOpen = XMLHttpRequest.prototype.open;
-      const originalSend = XMLHttpRequest.prototype.send;
-
-      XMLHttpRequest.prototype.open = function(method, url, ...args) {
-        this._url = url;
-        this._method = method;
-        this._args = args;
-        
-        let finalUrl = url;
-        const decodedUrl = decodeURIComponent(url);
-        
-        for (const [filename, blobUrl] of Object.entries(window.mergedBlobUrls)) {
-          if (url.includes(encodeURIComponent(filename)) || 
-              decodedUrl.includes(filename) || 
-              url.includes(filename)) {
-            finalUrl = blobUrl;
-            break;
-          }
-        }
-        
-        return originalOpen.call(this, method, finalUrl, ...args);
-      };
-
-      XMLHttpRequest.prototype.send = function(...args) {
-        const xhr = this;
-        
-        if (!window.assetsReady) {
-          const checkReady = setInterval(() => {
-            if (window.assetsReady) {
-              clearInterval(checkReady);
-              originalSend.apply(xhr, args);
-            }
-          }, 50);
-          return;
-        }
-        
-        return originalSend.apply(this, args);
-      };
-      
-      window.xhrInterceptorInstalled = true;
-    }
-
-    async function prepareGameAssets() {
-      try {
-        window.assetsReady = false;
-        delete window.xhrInterceptorInstalled;
-        window.mergedBlobUrls = {};
-        
-        setupXHRInterceptor();
-        
-        const filesToMerge = [
-          'Build/WebGL.data.unityweb'
-        ];
-        
-        for (const filename of filesToMerge) {
-          const blobUrl = await mergeSplitFile(filename, 3);
-          if (blobUrl) {
-            window.mergedBlobUrls[filename] = blobUrl;
-          }
-        }
-        
-        window.assetsPrepared = true;
-        window.assetsReady = true;
-        
-        UnityLoader.instantiate("unityContainer", "Build/WebGL.json");
-        
-      } catch (error) {
-        window.assetsPrepared = false;
-        window.assetsReady = true;
-        UnityLoader.instantiate("unityContainer", "Build/WebGL.json");
-      }
-    }
-
-    prepareGameAssets();
-  </script>
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>really cool flash game</title>
   <style>
-  * {
-    margin: 0;
-    padding: 0;
-  }
-
-  html, body {
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    background-color: #222;
-  }
-
-  #unityContainer {
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  canvas {
-    width: 100% !important;
-    height: 100% !important;
-  }
-</style>
-  <style>
-    * {
+    html, body {
       margin: 0;
       padding: 0;
-    }
-
-    body {
-      background-color: #333;
-    }
-
-    canvas {
-      width: 100%;
+      background: black;
+      overflow: hidden;
       height: 100%;
-      position: absolute;
-    }
-
-    div#loadingBox {
       width: 100%;
-      height: 20px;
+    }
+    #flash-container {
       position: absolute;
       top: 50%;
-      margin-top: -10px;
-      text-align: center;
-    }
-
-    div#bgBar {
-      display: none;
-      position: absolute;
-      width: 200px;
-      margin-left: -100px;
       left: 50%;
-      height: 2px;
-      background-color: #FFF;
-      border-radius: 2px;
-    }
-
-    div#progressBar {
-      display: none;
-      left: 50%;
-      position: absolute;
-      margin-left: -100px;
-      width: 0px;
-      height: 2px;
-      background-color: #990000;
-      border-radius: 2px;
-    }
-
-    p#loadingInfo {
-      color: #FFF;
-      letter-spacing: 1px;
-      position: absolute;
-      width: 100%;
-      font-family: "Monaco", sans-serif;
-      text-transform: uppercase;
-      text-align: center;
-      font-size: 8px;
-      margin-top: 10px;
-    }
-
-    div#spinner {
-      position: absolute;
-      height: 2px;
-      left: 50%;
-      margin-left: -100px;
-      width: 200px;
-      position: relative;
+      transform: translate(-50%, -50%);
+      background: black;
       overflow: hidden;
-      background-color: #FFF;
     }
-
-    div#spinner:before {
+    .black-box {
+      position: fixed;
+      background: black;
+      z-index: 10;
+    }
+    #box-top {
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 0;
+    }
+    #box-bottom {
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 0;
+    }
+    #box-left {
+      top: 0;
+      left: 0;
+      width: 0;
+      height: 100%;
+    }
+    #box-right {
+      top: 0;
+      right: 0;
+      width: 0;
+      height: 100%;
+    }
+    ruffle-player {
+      width: 100%;
+      height: 100%;
+      background: black;
       display: block;
-      position: absolute;
-      content: "";
-      left: -200px;
-      width: 200px;
-      height: 4px;
-      background-color: #990000;
-      animation: loading 2s linear infinite;
-    }
-
-    @keyframes loading {
-      from {
-        left: -50%;
-        width: 30%;
-      }
-
-      50% {
-        width: 30%;
-      }
-
-      70% {
-        width: 70%;
-      }
-
-      80% {
-        left: 50%;
-      }
-
-      95% {
-        left: 120%;
-      }
-
-      to {
-        left: 100%;
-      }
     }
   </style>
+  <script src="https://cdn.jsdelivr.net/npm/@ruffle-rs/ruffle@0.2.0-nightly.2025.10.2/ruffle.min.js"></script>
 </head>
-
 <body>
-  <div id="unityContainer" style="width: 800px; height: 600px; margin: auto"></div>
+  <div id="flash-container"></div>
+  <div class="black-box" id="box-top"></div>
+  <div class="black-box" id="box-bottom"></div>
+  <div class="black-box" id="box-left"></div>
+  <div class="black-box" id="box-right"></div>
+  <script>
+    const container = document.getElementById("flash-container");
+    const boxTop = document.getElementById("box-top");
+    const boxBottom = document.getElementById("box-bottom");
+    const boxLeft = document.getElementById("box-left");
+    const boxRight = document.getElementById("box-right");
+    
+    function resizeGame() {
+      const windowWidth = window.innerWidth;
+      const windowHeight = window.innerHeight;
+      const aspectRatio = 5.5 / 3;
+      
+      // Use 95% of available space instead of 100%
+      let width = Math.floor(windowWidth * 1);
+      let height = Math.floor(width / aspectRatio);
+      
+      if (height > windowHeight * 1) {
+        height = Math.floor(windowHeight * 1);
+        width = Math.floor(height * aspectRatio);
+      }
+      
+      container.style.width = `${width}px`;
+      container.style.height = `${height}px`;
+      
+      // Calculate margins
+      const topMargin = (windowHeight - height) / 2;
+      const leftMargin = (windowWidth - width) / 2;
+      
+      // Set black box sizes
+      boxTop.style.height = `${topMargin}px`;
+      boxBottom.style.height = `${topMargin}px`;
+      boxLeft.style.width = `${leftMargin}px`;
+      boxRight.style.width = `${leftMargin}px`;
+    }
+    
+    window.addEventListener("resize", resizeGame);
+    window.addEventListener("DOMContentLoaded", () => {
+      resizeGame();
+      const ruffle = window.RufflePlayer?.newest() || window.RufflePlayer?.createPlayer();
+      if (ruffle && container) {
+        const player = ruffle.createPlayer();
+        player.style.width = "100%";
+        player.style.height = "100%";
+        player.style.background = "black";
+        container.appendChild(player);
+        player.load("$1");
+      } else {
+        container.textContent = "Ruffle failed to load."; 
+      }
+    });
+  </script>
+    
+    <embed src="https://cdn.jsdelivr.net/gh/bubbls/UGS-file-encryption@cd9be47be124235eed88551970175458d7b34318/yellow.swf" width="100%" height="100%">
 </body>
-
 </html>
+</Content>
+</Module>
