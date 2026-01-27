@@ -51,7 +51,7 @@ pageRefresh.onclick = () => {
 };
 
 newTabButton.onclick = () => {
-  addTab("uvsearch.rhw.one");
+  addTab("duckduckgo.com");
 };
 
 // Options (opt menu)
