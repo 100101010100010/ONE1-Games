@@ -205,15 +205,8 @@ function focusTab(tab) {
   selectedTab = tab;
   tab.view.style.display = "block";
 
-  // --- UPDATED LOGIC HERE ---
-  // Only update the URL bar if there isn't a manual search currently being typed/transferred
-  const pendingSearch = localStorage.getItem('autoSearchQuery');
-  if (pendingSearch) {
-      urlInput.value = pendingSearch;
-  } else {
-      urlInput.value = tab.url;
-  }
-  // ---------------------------
+  // Update URL bar
+  urlInput.value = tab.url;
 
   tabList.children[tabs.indexOf(tab)].classList.add("selectedTab");
 }
@@ -255,7 +248,7 @@ async function addTab(link) {
   focusTab(tab);
 }
 
-addTab("");
+addTab("duckduckgo.com");
 
 const urlParams = new URLSearchParams(window.location.search);
 
