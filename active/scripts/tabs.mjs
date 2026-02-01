@@ -247,16 +247,28 @@ async function addTab(link) {
   tabView.appendChild(tab.view);
   focusTab(tab);
 }
-addTab("html.duckduckgo.com/html");
+/* --- ADD THIS TO THE BOTTOM OF tabs.mjs --- */
 
-const urlParams = new URLSearchParams(window.location.search);
+// 1. Function to handle the initial search check
+async function handleInitialLoad() {
+  const pendingSearch = localStorage.getItem('autoSearchQuery');
 
-if (urlParams.has("inject")) {
-  let tab = {};
-  const injection = urlParams.get("inject");
+  if (pendingSearch) {
+    // Clear it immediately so it doesn't repeat on refresh
+    localStorage.removeItem('autoSearchQuery');
 
-  setTimeout(() => {
-    addTab(injection)
-    focusTab()
-  }, 100);
+    // Fill the UI input so you can see what was searched
+    if (urlInput) {
+      urlInput.value = pendingSearch;
+    }
+
+    // Direct call to your internal function (no "submit" event needed)
+    await addTab(pendingSearch);
+  } else {
+    // Default startup page if no search was passed from home.html
+    addTab("html.duckduckgo.com/html");
+  }
 }
+
+// 2. Trigger the check
+handleInitialLoad();
