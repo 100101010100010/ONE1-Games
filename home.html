@@ -220,14 +220,19 @@ html, body {
             </a>
         </div>
     <script>
-        const checkbox = document.getElementById('mode-toggle');
-        checkbox.addEventListener('change', () => {
-            if (checkbox.checked) {
-                document.documentElement.setAttribute('data-theme', 'dark');
-            } else {
-                document.documentElement.setAttribute('data-theme', 'light');
-            }
-        });
+const homeSearch = document.getElementById('home-search');
+
+homeSearch.addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') {
+        const query = homeSearch.value.trim();
+        if (query) {
+            // Save query to localStorage
+            localStorage.setItem('autoSearchQuery', query);
+            // Redirect to the index.html page (adjust path as needed)
+            window.location.href = '/active/'; 
+        }
+    }
+});
     </script>
 </body>
 </html>
