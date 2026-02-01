@@ -942,6 +942,11 @@
     "title": "We Become what we Behold"
   },
   {
+    "link": "projects/winxp/index.html",
+    "imgSrc": "projects/winxp/bliss.jpeg",
+    "title": "Windows XP simulator (fanmade)"
+  },
+  {
     "link": "projects/wolf3d/index.html",
     "imgSrc": "projects/wolf3d/art/wolf3d.png",
     "title": "Wolfenstein 3D"
