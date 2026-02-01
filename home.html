@@ -220,19 +220,14 @@ html, body {
             </a>
         </div>
     <script>
-const homeSearch = document.getElementById('home-search');
-
-homeSearch.addEventListener('keypress', (e) => {
-    if (e.key === 'Enter') {
-        const query = homeSearch.value.trim();
-        if (query) {
-            // Save query to localStorage
-            localStorage.setItem('autoSearchQuery', query);
-            // Redirect to the index.html page (adjust path as needed)
-            window.location.href = '/active/'; 
-        }
-    }
-});
+// Inside home.html
+if (e.key === 'Enter') {
+  const query = homeSearch.value.trim();
+  if (query) {
+    localStorage.setItem('autoSearchQuery', query); // This key must match tabs.mjs
+    window.location.href = '/active/'; // Or your active directory
+  }
+}
     </script>
 </body>
 </html>
