@@ -239,32 +239,32 @@ async function addTab(link) {
       });
     });
   });
-/* --- Replace the bottom of tabs (1).mjs with this --- */
+async function handleStartup() {
 
-// Function to handle the initial search check
-async function handleInitialLoad() {
+
+
   const pendingSearch = localStorage.getItem('autoSearchQuery');
   const urlParams = new URLSearchParams(window.location.search);
 
   if (pendingSearch) {
-    // 1. Clear memory immediately so it doesn't loop on refresh
+    // 1. Clear memory so it doesn't loop on refresh
     localStorage.removeItem('autoSearchQuery');
 
-    // 2. Call addTab. Inside addTab, your code already calls search(link),
-    // which will turn "google" or "pizza" into a real search URL.
+    // 2. addTab(link) automatically calls search(link) to handle search engines
+    // and getUV(link) to handle the proxying.
     await addTab(pendingSearch);
-    
-    // 3. Sync the text bar for the user
+
+    // 3. Ensure the URL bar shows the clean search term
     if (urlInput) urlInput.value = pendingSearch;
 
   } else if (urlParams.has("inject")) {
     const injection = urlParams.get("inject");
-    addTab(injection);
+    await addTab(injection);
   } else {
-    // 4. Default home page if no search is pending
+    // Default page if no search is pending
     addTab("html.duckduckgo.com/html");
   }
 }
 
-// Run the startup check
-handleInitialLoad();
+// Start the check
+handleStartup();
