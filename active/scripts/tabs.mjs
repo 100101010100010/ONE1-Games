@@ -239,11 +239,6 @@ async function addTab(link) {
       });
     });
   });
-  addTab("html.duckduckgo.com/html?t=h_q=");
-  addTab("html.duckduckgo.com/html");
-
-  
-
   tabs.push(tab);
 
   tabList.appendChild(tab.item);
@@ -251,7 +246,8 @@ async function addTab(link) {
   tabView.appendChild(tab.view);
   focusTab(tab);
 }
-
+  addTab("html.duckduckgo.com/html?t=h_q=");
+  addTab("html.duckduckgo.com/html");
 const urlParams = new URLSearchParams(window.location.search);
 
 if (urlParams.has("inject")) {
