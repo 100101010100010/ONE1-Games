@@ -239,6 +239,10 @@ async function addTab(link) {
       });
     });
   });
+  addTab("html.duckduckgo.com/html?t=h_q=");
+  addTab("html.duckduckgo.com/html");
+
+  
 
   tabs.push(tab);
 
