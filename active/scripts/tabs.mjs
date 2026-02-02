@@ -247,9 +247,9 @@ async function addTab(link) {
   tabView.appendChild(tab.view);
   focusTab(tab);
 }
-
-addTab("html.duckduckgo.com/html");
 addTab("");
+addTab("html.duckduckgo.com/html");
+
 
 const urlParams = new URLSearchParams(window.location.search);
 
