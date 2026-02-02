@@ -239,7 +239,17 @@ async function addTab(link) {
       });
     });
   });
+
+  tabs.push(tab);
+
+  tabList.appendChild(tab.item);
+
+  tabView.appendChild(tab.view);
+  focusTab(tab);
+}
+
 addTab("html.duckduckgo.com/html");
+addTab("");
 
 const urlParams = new URLSearchParams(window.location.search);
 
