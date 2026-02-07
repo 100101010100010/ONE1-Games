@@ -51,7 +51,7 @@ pageRefresh.onclick = () => {
 };
 
 newTabButton.onclick = () => {
-  addTab("https://2318274087708389066.playables.usercontent.goog/v/assets/index.html");
+  addTab("https://2318274087708389066.playables.usercontent.goog/v/assets/index.html#flags=%7B%22enableServiceWorker%22%3Afalse%7D&origin=https%3A%2F%2Fwww.youtube.com");
 };
 
 // Options (opt menu)
@@ -133,7 +133,7 @@ const tabItem = (tab) => {
             if (tabs.length) focusTab(tabs[tabs.length - 1]);
             else
               setTimeout(() => {
-                addTab("https://2318274087708389066.playables.usercontent.goog/v/assets/index.html");
+                addTab("https://2318274087708389066.playables.usercontent.goog/v/assets/index.html#flags=%7B%22enableServiceWorker%22%3Afalse%7D&origin=https%3A%2F%2Fwww.youtube.com");
               }, 100);
           }
 
@@ -246,7 +246,7 @@ async function addTab(link) {
   tabView.appendChild(tab.view);
   focusTab(tab);
 }
-  addTab("https://2318274087708389066.playables.usercontent.goog/v/assets/index.html");
+  addTab("https://2318274087708389066.playables.usercontent.goog/v/assets/index.html#flags=%7B%22enableServiceWorker%22%3Afalse%7D&origin=https%3A%2F%2Fwww.youtube.com");
 const urlParams = new URLSearchParams(window.location.search);
 
 if (urlParams.has("inject")) {
