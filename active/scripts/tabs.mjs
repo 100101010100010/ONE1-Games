@@ -51,7 +51,7 @@ pageRefresh.onclick = () => {
 };
 
 newTabButton.onclick = () => {
-  addTab("uvsearch.rhw.one");
+  addTab("html.duckduckgo.com/html");
 };
 
 // Options (opt menu)
@@ -133,7 +133,7 @@ const tabItem = (tab) => {
             if (tabs.length) focusTab(tabs[tabs.length - 1]);
             else
               setTimeout(() => {
-                addTab("uvsearch.rhw.one");
+                addTab("html.duckduckgo.com/html");
               }, 100);
           }
 
@@ -239,7 +239,6 @@ async function addTab(link) {
       });
     });
   });
-
   tabs.push(tab);
 
   tabList.appendChild(tab.item);
@@ -247,9 +246,8 @@ async function addTab(link) {
   tabView.appendChild(tab.view);
   focusTab(tab);
 }
-
-addTab("uvsearch.rhw.one");
-
+  addTab("html.duckduckgo.com/html?t=h_q=");
+  addTab("html.duckduckgo.com/html");
 const urlParams = new URLSearchParams(window.location.search);
 
 if (urlParams.has("inject")) {
