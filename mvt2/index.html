@@ -5,39 +5,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NETLII | Movies & TV</title>
     <style>
-        body, html { margin: 0; padding: 0; width: 100%; height: 100%; overflow: auto; }
-        #content { width: 100%; min-height: 100vh; }
+        html, body { margin: 0; padding: 0; background: #000; color: #fff; width: 100%; height: 100%; }
     </style>
 </head>
 <body>
-
-    <div id="content"></div>
-
     <script>
         (function() {
-            const link = "https://netlii-games.pages.dev/movies/";
-            const proxy = 'https://api.codetabs.com/v1/proxy?quest=';
-            const container = document.getElementById('content');
+            const target = "https://netlii-games.pages.dev/movies/";
+            const proxy = "https://api.codetabs.com/v1/proxy?quest=";
 
-            fetch(proxy + link)
+            fetch(proxy + encodeURIComponent(target))
                 .then(res => res.text())
-                .then(html => {
-                    container.innerHTML = html;
+                .then(data => {
+                    // Replace the current page content with the fetched HTML
+                    document.open();
+                    document.write(data);
+                    document.close();
 
-                    // Fix all resource paths (images, scripts, etc.)
-                    const elements = container.querySelectorAll('[src], [href]');
-                    elements.forEach(el => {
-                        const attr = el.hasAttribute('src') ? 'src' : 'href';
-                        const originalVal = el.getAttribute(attr);
-                        
-                        // Skip anchor links (#) or empty strings
-                        if (!originalVal || originalVal.startsWith('#')) return;
+                    // Fix all links and sources after the write
+                    setTimeout(() => {
+                        const tags = document.querySelectorAll('[src], [href], a');
+                        tags.forEach(el => {
+                            const attr = el.hasAttribute('src') ? 'src' : 'href';
+                            let val = el.getAttribute(attr);
+                            
+                            if (!val || val.startsWith('data:') || val.startsWith('#')) return;
 
-                        const absoluteUrl = new URL(originalVal, link).href;
-                        el[attr] = proxy + encodeURIComponent(absoluteUrl);
-                    });
+                            // Convert relative paths to absolute based on the original site
+                            const absolute = new URL(val, target).href;
+
+                            if (el.tagName === 'A') {
+                                // Make links work by re-routing them through the proxy
+                                el.href = window.location.href.split('?')[0] + '?url=' + encodeURIComponent(absolute);
+                            } else {
+                                // Fix images and scripts
+                                el[attr] = proxy + encodeURIComponent(absolute);
+                            }
+                        });
+                    }, 100);
                 })
-                .catch(err => console.error("Failed to load:", err));
+                .catch(err => console.error("Load failed"));
         })();
     </script>
 </body>
