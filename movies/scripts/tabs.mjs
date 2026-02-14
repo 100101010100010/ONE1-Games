@@ -51,7 +51,7 @@ pageRefresh.onclick = () => {
 };
 
 newTabButton.onclick = () => {
-  addTab("netlii-games.pages.dev/movies");
+  addTab("netlii-games.pages.dev/movies-and-tv");
 };
 
 // Options (opt menu)
@@ -133,7 +133,7 @@ const tabItem = (tab) => {
             if (tabs.length) focusTab(tabs[tabs.length - 1]);
             else
               setTimeout(() => {
-                addTab("netlii-games.pages.dev/movies");
+                addTab("netlii-games.pages.dev/movies-and-tv");
               }, 100);
           }
 
@@ -248,7 +248,7 @@ async function addTab(link) {
   focusTab(tab);
 }
 
-addTab("netlii-games.pages.dev/movies");
+addTab("netlii-games.pages.dev/movies-and-tv");
 
 const urlParams = new URLSearchParams(window.location.search);
 
