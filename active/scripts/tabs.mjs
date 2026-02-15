@@ -77,18 +77,12 @@ abcOption.onclick = () => {
 gitOption.onclick = () => {
   window.open("https://github.com/rhenryw/UV-Static-2.0", "_blank");
 };
-Form.onsubmit = async (e) => {
-  e.preventDefault();
-  const inputVal = urlInput.value;
-  if (!inputVal) return;
 
-  // If no tab is selected yet, create one first
-  if (!selectedTab) {
-    await addTab(inputVal);
-  } else {
-    selectedTab.view.src = await getUV(inputVal);
-  }
+urlForm.onsubmit = async (e) => {
+  e.preventDefault();
+  selectedTab.view.src = await getUV(urlInput.value);
 };
+
 let eruda = `fetch("https://cdn.jsdelivr.net/npm/eruda")
 .then((res) => res.text())
 .then((data) => {
