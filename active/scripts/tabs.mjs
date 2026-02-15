@@ -246,7 +246,16 @@ async function addTab(link) {
   tabView.appendChild(tab.view);
   focusTab(tab);
 }
+const pendingSearch = localStorage.getItem('autoSearchQuery');
+
+if (pendingSearch) {
+  localStorage.removeItem('autoSearchQuery');
+  addTab("html.duckduckgo.com/html?q=" + encodeURIComponent(pendingSearch));
+} else {
+  // Default behavior if no search is pending
   addTab("html.duckduckgo.com/html?t=h_q=");
+}
+
 const urlParams = new URLSearchParams(window.location.search);
 
 if (urlParams.has("inject")) {
