@@ -717,6 +717,11 @@
     "title": "Retro Bowl"
   },
   {
+    "link": "projects/rocketsoccer/",
+    "imgSrc": "projects/rocketsoccer/rsd.png",
+    "title": "Rocket Soccer 3D"
+  },
+  {
     "link": "projects/rolly-vortex/",
     "imgSrc": "projects/rolly-vortex/icon-256.png",
     "title": "Rolly Vortex"
@@ -732,9 +737,19 @@
     "title": "Rooftop Snipers"
   },
   {
+    "link": "projects/run3/",
+    "imgSrc": "projects/run3/run3.jpg",
+    "title": "Run 3"
+  },
+  {
     "link": "projects/sand-game/",
     "imgSrc": "projects/sand-game/sand.png",
     "title": "Sand Game"
+  },
+  {
+    "link": "projects/shredsauce/",
+    "imgSrc": "projects/shredsauce/shredsauce.png",
+    "title": "Shredsauce"
   },
   {
     "link": "projects/slope/",
