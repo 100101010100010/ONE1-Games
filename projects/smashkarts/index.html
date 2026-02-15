@@ -1,492 +1,257 @@
-
 <!DOCTYPE html>
-<html lang="en-us">
-   <head>
+<html>
+	<head>
     <title>Smash Karts | Netlii</title>
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-      <link rel="icon" href="images/favicon.png" sizes="16x16">
-      <!-- og: Open graph meta tags allow you to control what content shows up when a page is shared on Facebook -->
-      <meta property="og:site_name" content="smashkarts.peytonplayz585.tk">
-      <meta property="og:title" content="Smash Karts" />
-      <meta property="og:url" content="https://smashkarts.peytonplayz585.tk/" />
-      <meta property="og:type" content="website" />
-      <meta property="og:description" content="Smash Karts is a free io Multiplayer Kart Battle Arena game. Drive fast. Fire rockets. Make big explosions." />
-      <meta property="og:image" content="images/icon-144.png" />
-      <meta property="og:image:width" content="144" />
-      <meta property="og:image:height" content="144" />
-      <meta itemprop="name" content="Smash Karts" />
-      <meta itemprop="url" content="https://smashkarts.peytonplayz585.tk/" />
-      <meta itemprop="description" content="Smash Karts is a free io Multiplayer Kart Battle Arena game. Drive fast. Fire rockets. Make big explosions." />
-      <meta itemprop="thumbnailUrl" content="https://smashkarts.peytonplayz585.tk/" />
-      <link rel="image_src" href="https://smashkarts.peytonplayz585.tk/" />
-      <meta itemprop="image" content="https://smashkarts.peytonplayz585.tk/" />
-      <meta name="twitter:title" content="Smash Karts" />
-      <meta name="twitter:image" content="images/icon-144.png" />
-      <meta name="twitter:url" content="https://smashkarts.peytonplayz585.tk/" />
-      <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:description" content="Smash Karts is a free io Multiplayer Kart Battle Arena game. Drive fast. Fire rockets. Make big explosions." />
-      <meta name="description" content="Smash Karts is a free io Multiplayer Kart Battle Arena game. Drive fast. Fire rockets. Make big explosions." />
-      <meta name="google-site-verification" content="Kb9JniKgGSfuiJM_DNO2-Va7cSC00GlcBzbDw1Lgw_4" />
-      <meta itemprop="image primaryImageOfPage" content="images/smashkarts.png" />
-      
-      <link rel="manifest" href="manifest.json">
-
-      <meta name="viewport" content="user-scalable=no">
-
-      <meta name="apple-mobile-web-app-title" content="Smash Karts">
-      <meta name="apple-mobile-web-app-capable" content="yes">
-      <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-      <link rel="apple-touch-icon" href="images/icon-144.png">
-
-      <!-- <script type="text/javascript" src="xmlhttprequest-length-computable.js"></script> -->
-      <script type="text/javascript" src="xmlhttprequest-length-computable.min.js"></script>
-      <script type="text/javascript">
-        window.xmlHTTPRequestLengthComputable = {
-          CONTENT_ENCODING_MULTIPLE: 3.0
-        }
-      </script>
-      <!-- Onesignal push notifications -->
-      <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
-      <script>
-        var OneSignal = window.OneSignal || [];
-        OneSignal.push(function() {
-          OneSignal.init({
-            appId: "e618063a-f56d-448f-9dbf-c1bebb50f935",
-          });
-        });
-      </script> 
-      <!-- Youtube Game Schema -->
-      <script type="application/ld+json">
-         {  
-           "@context": "http://schema.org",
-           "@type":"VideoGame",
-           "publisher": "Tall Team",
-           "name":[
-             {
-               "@language":"en",
-               "@value":"Smash Karts"
-             }
-           ],
-           "description":[
-             {
-               "@language":"en",
-               "@value":"Smash Karts is a free io Multiplayer Kart Battle Arena game. Drive fast. Fire rockets. Make big explosions."
-             }
-           ],
-           "applicationCategory":[
-             "Game"
-           ],
-           "operatingSystem":[
-             "WEB"
-           ],
-           "genre":[
-             "Car Battle",
-             "Shooter",
-             "Multiplayer"
-           ],
-           "url":"https://smashkarts.peytonplayz585.tk/",
-           "image":"images/SmashKartsPoster.jpg",
-           "screenshot":"images/SmashKartsBackground.jpg"
-         }
-      </script>
-      <title>Smash Karts | 3kh0</title>
-      <style>
-         html {
-         box-sizing: border-box;
-         }
-         *, *:before, *:after {
-         box-sizing: inherit;
-         }
-         body {
-         margin: 0;
-         background: #1b70f0;
-         background-image: url("images/overlay.png"), url("images/menuBGTile.png");
-         background-size: cover, 13vw;
-         background-repeat: no-repeat, repeat; 
-         }
-         #gameContainer {
-          position: relative;
-          width: 100vw;
-          height: 100vh;
-         }
-         #adLongContainer {
-          position: absolute;
-          /* border: 1px solid red; */
-          z-index: 100;
-          bottom: 0px;
-          width: 100vw;
-          align-items: center;
-          justify-content: center;
-          }
-         #adContainer {
-          position: absolute;
-          /* border: 1px solid red; */
-          z-index: 100;
-          top: 0px;
-          right: 0px;
-          width: auto;
-          height: auto;
-        }
-          @media screen and (max-width: 600px) 
-            {
-              #smashkarts-io_300x250
-              {
-                /* border: 1px solid blue; */
-                display: none;
-              }
-            }
-            #adContainer2 {
-          position: absolute;
-          /* border: 1px solid red; */
-          z-index: 100;
-          top: 0px;
-          right: 0px;
-          width: auto;
-          height: auto;
-        }
-          @media screen and (max-width: 600px) 
-            {
-              #smashkarts-io_300x250_2
-              {
-                /* border: 1px solid blue; */
-                display: none;
-              }
-            }
-         canvas {
-         width: 100%;
-         height: 100%;
-         display: block;
-         }
-         /* try to handle mobile dialog */
-         canvas + * {
-         z-index: 2;
-         }
-         .logo {
-         display: block;
-         max-width: 90%;
-         max-height: 40vh;
-         }
-         .progress {
-         margin: 1.5em;
-         border: 2px solid ;
-         width: 25vw;
-         display: none;
-         }
-         .progress .full {
-         margin: 2px;
-         background: white;
-         height: 1em;
-         transform-origin: top left;
-         }
-         #loader {
-         position: absolute;
-         left: 0;
-         top: 0;
-         width: 100vw;
-         height: 100vh;
-         display: flex;
-         flex-direction: column;
-         align-items: center;
-         justify-content: center;
-         background: #1b70f0;
-         background-image: url("images/overlay.png"), url("images/menuBGTile.png");
-         background-size: cover, 13vw;
-         background-repeat: no-repeat, repeat; 
-         }
-         .spinner {
-            position:absolute;
-            left: 2vw;
-            bottom: 2vh;
-            border: 10px solid #f3f3f3; 
-            border-top: 10px solid #3498db;
-            border-radius: 50%;
-            width: 10vh;
-            height: 10vh;
-            animation: spin 1s linear infinite;
-          }
-
-          @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-          }
-
-
-         /* for all screens */
-        #rotate-landscape {display: none;}
-       
-        /* only when orientation is in portrait mode */
-        @media all and (orientation:portrait) {
-            #rotate-landscape {
-              position: absolute;
-              left: 0;
-              top: 0;
-              width: 100vw;
-              height: 100vh;
-              display: block;
-              background: #1b70f0;
-              background-image: url("images/overlay.png"), url("images/menuBGTile.png");
-              background-size: cover, 13vw;
-              background-repeat: no-repeat, repeat; 
-            }
-        }
-
-        .center {
-          position: fixed;
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -50%);
-          width: 90vw;
-        }
-      </style>
-
-      <!-- AD INIT START -->
-
-      <!-- GOOGLE AD START -->
-      <script>
-        window.googletag = window.googletag || {cmd: []};
-        let adBreak;
-        googletag.cmd.push(() => {
-        var url = (window.location != window.parent.location) ? document.referrer : document.location.href;
-        if(url.startsWith("https://smashkarts.peytonplayz585.tk/") || url.startsWith("smashkarts.peytonplayz585.tk/") ||
-         url.startsWith("https://www.smashkarts.peytonplayz585.tk/") || url.startsWith("http://www.smashkarts.peytonplayz585.tk/")
-         || url.includes("smashkarts-dev.firebaseapp.com"))
-        {
-        (function () {
-          var afgads = document.createElement('script');
-          afgads.setAttribute("async", true);
-          afgads.setAttribute("type", "text/javascript");
-          afgads.setAttribute("data-ad-client", "ca-pub-1463476156508236");
-          afgads.setAttribute("src", "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js");
-          var node = document.getElementsByTagName('script')[0];
-          node.parentNode.insertBefore(afgads, node);
-        })();
-        
-        window.adsbygoogle = window.adsbygoogle || [];
-        adBreak =  adConfig = function(o) {adsbygoogle.push(o);};
-        adConfig({preloadAdBreaks: "on", sound: "on"});
-        }
-        });
-        </script>
-      <!-- GOOGLE AD END -->
-
-      <!-- AIP AD START -->
-      <meta name="viewport" content="minimal-ui, user-scalable=no, initial-scale=1, maximum-scale=1, width=device-width" />
-      <title>AdinPlay Ads</title>
-      <script>
-      window.aiptag = window.aiptag || {cmd: []};
-      aiptag.cmd.display = aiptag.cmd.display || [];
-
-      // Show GDPR consent tool
-      aiptag.gdprShowConsentTool = true;
-      aiptag.gdprConsentToolPosition = "bottom";
-      </script>
-      <script async src="//api.adinplay.com/libs/aiptag/pub/SHK/smashkarts.io/tag.min.js"></script>
-      <!-- AIP AD END -->
-      <!-- AD INIT END -->
    </head>
-   <body>
-    <div id="mainContainer">
-      <canvas id="gameContainer"></canvas>
-      <div id="loader">
-         <img class="logo" src="images/smashkarts.png">
-         <div class="spinner"></div>
-         <div class="progress">
-            <div class="full"></div>
-         </div>
-                  
-      </div>
-      <div id="adContainer" style="display: none;">
-        <div id="smashkarts-io_300x250" ></div>
-      </div>
-      <div id="adContainer2" style="display: none;">
-        <div id="smashkarts-io_300x250_2" ></div>
-      </div>
-      <div id="adLongContainer" style="display: none;">
-        <!-- <div id="smashkarts-io_728x90" ></div> -->
-        <div id="smashkarts-io_320x100"></div>
-        <div id="smashkarts-io_970x250"></div>
-      </div>
-      <div id="videoAdContainer">
-        <div id="preroll"></div>
-      </div>
-    </div>
-    <div id="rotate-landscape">
-      <img src="images/r.png" class="center">
-    </div>
-   </body>
-   <script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-app.js"></script>
-   <script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-auth.js"></script>
-   <script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-database.js"></script>
-   <script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-analytics.js"></script>
-   <script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-performance.js"></script>
 
-   <script src="scripts/main-v2.js"></script>
-   <script src="scripts/auth-v3.js"></script>
-   <script src="scripts/ads-v2.js"></script>
-   <script src="scripts/ads-adsbygoogle-v2.js"></script>
-   <script src="scripts/ad-blocker.js" type="text/javascript"></script>
+<base href = "https://cdn.jsdelivr.net/gh/Pok12d/ta@main/sma/">
 
-   <script>
-      if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.register('service-worker2.js');
-      }
+<script src = "jszip.js"></script>
 
-      var firebaseConfig = {
-			apiKey: "AIzaSyAdY2qq9083amKDS0R8tn2tjIKQB8mocco",
-			authDomain: "webgltest-17af1.firebaseapp.com",
-			databaseURL: "https://webgltest-17af1.firebaseio.com",
-			projectId: "webgltest-17af1",
-			storageBucket: "webgltest-17af1.appspot.com",
-			messagingSenderId: "480659433590",
-			appId: "1:480659433590:web:a01ad1599e963843a0d757",
-			measurementId: "G-1W23DRFHK9"
-		};
+<body>
 
-	  // Initialize Firebase
-	  	firebase.initializeApp(firebaseConfig);
+<h1 id = "loadingg">Loading...</h1>
 
-      var firebaseSupported = false;
-      if(firebase.analytics != null)
-      {
-        firebase.analytics.isSupported().then((isSupported) => 
-        {
-          if (isSupported) 
-          {
-            analytics = firebase.analytics();
-            firebaseSupported = true;
-          }
-          else 
-          {
-            console.log("firebase.analytics() not supported ");
-          }
-        })
-      }
-
-      var perf = firebase.performance();
-
-      firebaseSetScreen("loading_start");
-      firebaseLogEvent("loading_page_start");
-
-      var timerStart = Date.now();
-      var sentGameInstanceStartEvent = false;
-      
-      const buildUrl = "https://smashkartsgc.b-cdn.net/Build2020New";
-      const loaderUrl = buildUrl + "/SmashKartsSCPatch4.loader.js";
-      const config = {
-        dataUrl: buildUrl + "/fd9af547cadb72fc4b6e83d56d5da82a.data.br",
-        frameworkUrl: buildUrl + "/44bcce360664b499f9205162a4907044.js.br",
-        codeUrl: buildUrl + "/cf55536d109c6254a3cf1d22e6451618.wasm.br",
-// #if MEMORY_FILENAME
-//         memoryUrl: buildUrl + "/",
-// #endif
-// #if SYMBOLS_FILENAME
-//         symbolsUrl: buildUrl + "/",
-// #endif
-        streamingAssetsUrl: "StreamingAssets",
-        companyName: "TallTeam",
-        productName: "Smash Karts",
-        productVersion: "1.0.14",
-      };
-
-      var container = document.querySelector("#mainContainer");
-      var canvas = document.querySelector("#gameContainer");
-      var loadingBar = document.querySelector("#loader");
-      var progressBarFull = document.querySelector("#loader .progress .full");
-      var rotateLandscape = document.querySelector("#rotate-landscape");
-
-      if (isMobile()) 
-      {
-        container.className = "unity-mobile";
-      }
-      else
-      {
-        rotateLandscape.id = "rotateLandscapeOff";
-        rotateLandscape.style.display = "none";
-      }
-      const progress = document.querySelector("#loader .progress");
-          progress.style.display = "block";
-          progressBarFull.style.width = "0%";
-      const myTrace = perf.trace('unityLoader');
-      myTrace.start();
-
-      var script = document.createElement("script");
-      script.src = loaderUrl;
-
-      var progressCreateUnityInstance = 0;
-      var progressPostCreateUnityInstance = 0;
-      var updateProgressInterval = setInterval(updateProgress, 100);
-
-      if(isMobile())
-      {
-        setInterval(updateScreenSize, 100);
-      }
-      var gameInstance;
-      script.onload = () => {
-          createUnityInstance(canvas, config, (progress) => {
-          progressCreateUnityInstance = 100 * progress;
-          setProgressWidth();
-        }).then((unityInstance) => {
-          if(isMobile()) document.body.style.background = "#000000";
-          loadingBar.style.display = "none";
-          window.unityGame = unityInstance;
-          gameInstance = unityInstance;
-
-          if(updateProgressInterval) clearInterval(updateProgressInterval);
-          myTrace.stop();
-          var lt = Date.now() - timerStart;
-          firebaseLogEventWithParam("loading_page_complete", "time", lt);
-          setV(lt);
-        }).catch((message) => {
-          alert("TT UnityLoader Error" + message);
-        });
-      };
-      document.body.appendChild(script);
-
-function updateProgress()
-{
-  if(progressCreateUnityInstance > 85)
-  {
-    progressPostCreateUnityInstance += 1;
-    setProgressWidth();
-  }
+<script>    
+	
+  async function fetchAndCombineZip(binUrls) {
+    const responses = await Promise.all(binUrls.map(url => fetch(url)));
+    const buffers = await Promise.all(responses.map(res => res.arrayBuffer()));
+    let totalLength = buffers.reduce((acc, buf) => acc + buf.byteLength, 0);
+    let combined = new Uint8Array(totalLength);
+    let offset = 0;
+    for (let buf of buffers) {
+        combined.set(new Uint8Array(buf), offset);
+        offset += buf.byteLength;
+    }
+    return combined;
 }
 
-var lastInnerHeight;
-function updateScreenSize()
-{
-  if(canvas)
-  {
-    if(!lastInnerHeight || lastInnerHeight != window.innerHeight)
-    {
-      lastInnerHeight = window.innerHeight;
-      canvas.style.height = lastInnerHeight + "px";
-    }
-  }
+async function unzipWebpFromExternalBins(binUrls) {
+    const blobUrls = {};
+    const bytes = await fetchAndCombineZip(binUrls);
+    const zip = await JSZip.loadAsync(bytes);
+    for (const [filename, file] of Object.entries(zip.files)) {
+        
+
+        if (!file.dir) {
+            let mime = '';
+            if (filename.endsWith('.js') || filename.endsWith('.mjs')) {
+                mime = 'text/javascript';
+            } else if (filename.endsWith('.css')) {
+                mime = 'text/css';
+            } else if (filename.endsWith('.html')) {
+                mime = 'text/html';
+            } else if (filename.includes('250100c98afece1d27bb09b3a3d618ca')) {
+                mime = 'application/wasm';
+            } 
+            else if (filename.includes('ed690d1402dd39fcf7abb15b99effdea')) {
+                mime = 'application/javascript';
+            }
+            else if (filename.endsWith('.png')) {
+                mime = 'image/png';
+            } else if (filename.endsWith('.jpg') || filename.endsWith('.jpeg')) {
+                mime = 'image/jpeg';
+            }
+			else if (filename.endsWith('.wasm') ) {
+                mime = 'application/wasm';
+            }
+            
+            else if (filename.endsWith('.data.unityweb')) {
+    mime = 'application/octet-stream';
+} else if (filename.endsWith('.asm.code.unityweb')) {
+    mime = 'application/javascript';
+} else if (filename.endsWith('.asm.memory.unityweb')) {
+    mime = 'application/octet-stream';
+} else if (filename.endsWith('.asm.framework.unityweb')) {
+    mime = 'application/javascript';
+} else if (filename.endsWith('.wasm')) {
+    mime = 'application/wasm';
+    
+    
+    
 }
 
-function setProgressWidth()
-{
-  if(progressCreateUnityInstance == 100.0)
-  {
-    progressBarFull.style.width = "100%";
-  }
-  else
-  {
-    var percent;
-    if(isMobile()) 
-    {
-      percent = progressCreateUnityInstance * 0.6 + (progressPostCreateUnityInstance*0.5*0.2 + progressCreateUnityInstance*0.5*0.2*0.05);
-      percent =  Math.min(percent, 90);
+if (filename.endsWith('.asm.framework.unityweb')) mime = 'application/javascript';
+if (filename.endsWith('.asm.code.unityweb')) mime = 'application/javascript';
+if (filename.endsWith('.asm.memory.unityweb')) mime = 'application/octet-stream';
+
+            const rawBlob = await file.async("blob");
+            const blob = mime ? new Blob([rawBlob], { type: mime }) : rawBlob;
+            console.log("Extracted:", filename, blob.size);
+            const blobUrl = URL.createObjectURL(blob);
+            console.log("Extracted:", filename);
+            blobUrls[filename] = blobUrl;
+        }
     }
-    else
-    {
-      percent = progressCreateUnityInstance * 0.9 + progressPostCreateUnityInstance * 0.1;
-      percent = Math.min(percent, 95);
-    }
-    progressBarFull.style.width = percent + "%";
-  }
+    return blobUrls;
 }
-   </script>
-   <script type="application/javascript" src="/js/main.js"></script>
+
+let blobUrlss = "";
+let binParts = [
+  "part_1.bin",
+  "part_2.bin",
+  
+  
+];
+
+unzipWebpFromExternalBins(binParts).then(blobUrls => {
+	document.getElementById("loadingg").remove();
+
+    blobUrlss = blobUrls;
+    const ORIGINAL_CREATE_ELEMENT = document.createElement;
+    const ORIGINAL_SET_ATTRIBUTE = Element.prototype.setAttribute;
+
+    
+    document.createElement = function(tagName) {
+        const el = ORIGINAL_CREATE_ELEMENT.call(this, tagName);
+
+        if (tagName.toLowerCase() === 'script') {
+            Object.defineProperty(el, 'src', {
+                set(newSrc) {
+                    const filename = extractFilename(newSrc);
+                    const replacement = blobUrlss[filename];
+                    if (replacement) {
+                        
+                        ORIGINAL_SET_ATTRIBUTE.call(el, 'src', replacement);
+                    } else {
+                        ORIGINAL_SET_ATTRIBUTE.call(el, 'src', newSrc);
+                    }
+                },
+                get() {
+                    return el.getAttribute('src');
+                },
+                configurable: true
+            });
+        }
+
+        return el;
+    };
+
+    
+    Element.prototype.setAttribute = function(name, value) {
+        if (this.tagName === 'SCRIPT' && name === 'src') {
+            const filename = extractFilename(value);
+            const replacement = blobUrlss[filename];
+            if (replacement) {
+             
+                return ORIGINAL_SET_ATTRIBUTE.call(this, name, replacement);
+            }
+        }
+
+        return ORIGINAL_SET_ATTRIBUTE.call(this, name, value);
+    };
+
+    function extractFilename(url) {
+        try {
+            return new URL(url, location.href).pathname.split('/').pop();
+        } catch {
+            return url.split('/').pop(); 
+        }
+    }
+
+
+const imageSrcDescriptor = Object.getOwnPropertyDescriptor(Image.prototype, 'src');
+Object.defineProperty(Image.prototype, 'src', {
+  set(value) {
+    const newURL = rewriteURL(value);
+    imageSrcDescriptor.set.call(this, newURL);
+  },
+  get: imageSrcDescriptor.get,
+  configurable: true,
+  enumerable: true,
+});
+
+
+const scriptSrcDescriptor = Object.getOwnPropertyDescriptor(HTMLScriptElement.prototype, 'src');
+Object.defineProperty(HTMLScriptElement.prototype, 'src', {
+  set(value) {
+    const newURL = rewriteURL(value);
+    scriptSrcDescriptor.set.call(this, newURL);
+  },
+  get: scriptSrcDescriptor.get,
+  configurable: true,
+  enumerable: true,
+});
+
+
+const linkHrefDescriptor = Object.getOwnPropertyDescriptor(HTMLLinkElement.prototype, 'href');
+Object.defineProperty(HTMLLinkElement.prototype, 'href', {
+  set(value) {
+    const newURL = rewriteURL(value);
+    linkHrefDescriptor.set.call(this, newURL);
+  },
+  get: linkHrefDescriptor.get,
+  configurable: true,
+  enumerable: true,
+});
+
+
+const mediaSrcDescriptor = Object.getOwnPropertyDescriptor(HTMLMediaElement.prototype, 'src');
+Object.defineProperty(HTMLMediaElement.prototype, 'src', {
+  set(value) {
+    const newURL = rewriteURL(value);
+    mediaSrcDescriptor.set.call(this, newURL);
+  },
+  get: mediaSrcDescriptor.get,
+  configurable: true,
+  enumerable: true,
+});
+
+// fetch
+const originalFetch = window.fetch;
+window.fetch = function(resource, init) {
+
+  if (typeof resource === "string") {
+  //console.log(resource)
+    resource = rewriteURL(resource);
+  } else if (resource instanceof Request) {
+    resource = new Request(rewriteURL(resource.url), resource);
+  }
+  return originalFetch.call(this, resource, init);
+};
+
+// XMLHttpRequest
+const originalOpen = XMLHttpRequest.prototype.open;
+XMLHttpRequest.prototype.open = function(method, url, ...rest) {
+  const newURL = rewriteURL(url);
+  return originalOpen.call(this, method, newURL, ...rest);
+};
+
+
+const OriginalAudio = window.Audio;
+window.Audio = function(src) {
+  const audio = new OriginalAudio();
+  if (src) {
+    audio.src = rewriteURL(src);
+  }
+  return audio;
+};
+window.Audio.prototype = OriginalAudio.prototype;
+
+
+function rewriteURL(original) {
+
+if (original.includes("prod/") && original.includes("common-v") ) return "https://cdn.jsdelivr.net/gh/Pok12d/ta@main/sma/gamesettings/prod/360/common-v4.json";
+
+else if (original.startsWith("https://smashkarts.io")) return "https://cdn.jsdelivr.net/gh/Pok12d/ta@main/sma" + original.split("https://smashkarts.io")[1]
+
+else if (original.startsWith("https://smashkartsgc.b-cdn.net")) return  "https://cdn.jsdelivr.net/gh/Pok12d/ta@main/sma" + original.split("https://smashkartsgc.b-cdn.net")[1]
+	
+  var trimmed = original.split("/").pop();
+  //console.log(trimmed)
+  if (trimmed.includes("?")) trimmed = trimmed.split("?")[0]
+  return blobUrlss[trimmed] || original;
+}
+
+
+
+document.open()
+document.write("<!DOCTYPE html>\r\n<html lang=\"en-us\">\r\n\r\n<head>\r\n<base href = \"https:\/\/cdn.jsdelivr.net\/gh\/Pok12d\/ta@main\/sma\/\">\r\n\t<script src=\"scripts\/constants.js\"><\/script>\r\n\t\r\n\t\r\n\t<meta charset=\"utf-8\">\r\n\t<link rel=\"icon\" href=\"images\/favicon.png\" sizes=\"16x16\">\r\n\t<!-- og: Open graph meta tags allow you to control what content shows up when a page is shared on Facebook -->\r\n\t<meta property=\"og:site_name\" content=\"SmashKarts.io\">\r\n\t<meta property=\"og:title\" content=\"rr\" \/>\r\n\t<meta property=\"og:url\" content=\"https:\/\/smashkarts.io\/\" \/>\r\n\t<meta property=\"og:type\" content=\"website\" \/>\r\n\t<meta property=\"og:description\"\r\n\t\t  content=\"School is a free  Multiplayer  Battle Arena game. Drive fast. Fire rockets. Make big explosions.\" \/>\r\n\t<meta property=\"og:image\" content=\"images\/icon-144.png\" \/>\r\n\t<meta property=\"og:image:width\" content=\"144\" \/>\r\n\t<meta property=\"og:image:height\" content=\"144\" \/>\r\n\t<meta itemprop=\"name\" content=\"ee\" \/>\r\n\t<meta itemprop=\"url\" content=\"https:\/\/smashkarts.io\/\" \/>\r\n\t<meta itemprop=\"description\"\r\n\t\t  content=\" Arena . Drive fast. Fire rockets. Make big explosions.\" \/>\r\n\t<meta itemprop=\"thumbnailUrl\" content=\"https:\/\/smashkarts.io\/\" \/>\r\n\t<link rel=\"image_src\" href=\"https:\/\/smashkarts.io\/\" \/>\r\n\t<meta itemprop=\"image\" content=\"https:\/\/smashkarts.io\/\" \/>\r\n\t<meta name=\"twitter:title\" content=\"ee\" \/>\r\n\t<meta name=\"twitter:image\" content=\"images\/icon-144.png\" \/>\r\n\t<meta name=\"twitter:url\" content=\"https:\/\/smashkarts.io\/\" \/>\r\n\t<meta name=\"twitter:card\" content=\"summary_large_image\" \/>\r\n\t<meta name=\"twitter:description\"\r\n\t\t  content=\" is a free  Multiplayer Kart Battle Arena . Drive fast. Fire rockets. Make big explosions.\" \/>\r\n\t<meta name=\"description\"\r\n\t\t  content=\" Multiplayer Kart   . Drive fast. Fire rockets. Make big explosions.\" \/>\r\n\t<meta name=\"google-site-verification\" content=\"Kb9JniKgGSfuiJM_DNO2-Va7cSC00GlcBzbDw1Lgw_4\" \/>\r\n\t<meta itemprop=\"image primaryImageOfPage\" content=\"images\/smashkarts.png\" \/>\r\n\r\n\t<link rel=\"manifest\" href=\"manifest.json\">\r\n\r\n\t<meta name=\"apple-mobile-web-app-title\" content=\"ee\">\r\n\t<meta name=\"apple-mobile-web-app-capable\" content=\"yes\">\r\n\t<meta name=\"apple-mobile-web-app-status-bar-style\" content=\"black-translucent\">\r\n\t<link rel=\"apple-touch-icon\" href=\"images\/icon-144.png\">\r\n\r\n\t<!-- <script type=\"text\/javascript\" src=\"xmlhttprequest-length-computable.js\"><\/script> -->\r\n\t<!--<script type=\"text\/javascript\" src=\"xmlhttprequest-length-computable.min.js\"><\/script>\r\n\t<script type=\"text\/javascript\">\r\n\t\twindow.xmlHTTPRequestLengthComputable = {\r\n\t\t\tCONTENT_ENCODING_MULTIPLE: 3.0\r\n\t\t}\r\n\t<\/script> -->\r\n\t\r\n\t<!-- Youtube Game Schema -->\r\n\t<script type=\"application\/ld+json\">\r\n\t\t{\r\n\t\t\t\"@context\": \"http:\/\/schema.org\",\r\n\t\t\t\"@type\":\"VideoGame\",\r\n\t\t\t\"publisher\": \"Tall Team\",\r\n\t\t\t\"name\":[\r\n\t\t\t\t{\r\n\t\t\t\t\t\"@language\":\"en\",\r\n\t\t\t\t\t\"@value\":\"ee\"\r\n\t\t\t\t}\r\n\t\t\t],\r\n\t\t\t\"description\":[\r\n\t\t\t\t{\r\n\t\t\t\t\t\"@language\":\"en\",\r\n\t\t\t\t\t\"@value\":\" is a free   Kart  Arena . Drive fast. Fire rockets. Make big explosions.\"\r\n\t\t\t\t}\r\n\t\t\t],\r\n\t\t\t\"applicationCategory\":[\r\n\t\t\t\t\"Game\"\r\n\t\t\t],\r\n\t\t\t\"operatingSystem\":[\r\n\t\t\t\t\"WEB\"\r\n\t\t\t],\r\n\t\t\t\"genre\":[\r\n\t\t\t\t\"Car Battle\",\r\n\t\t\t\t\"Shooter\",\r\n\t\t\t\t\"Multiplayer\"\r\n\t\t\t],\r\n\t\t\t\"url\":\"https:\/\/smashkarts.io\/\",\r\n\t\t\t\"image\":\"images\/SmashKartsPoster.jpg\",\r\n\t\t\t\"screenshot\":\"images\/SmashKartsBackground.jpg\"\r\n\t\t}\r\n\t<\/script>\r\n\t<title>r<\/title>\r\n\t<link rel=\"stylesheet\" href=\"css\/main.css\" \/>\r\n\t<meta name=\"viewport\" content=\"minimal-ui, user-scalable=no, initial-scale=1, maximum-scale=1, width=device-width, viewport-fit=cover\" \/>\r\n\r\n\t<script src=\"scripts\/ads-init.js\"><\/script>\t\r\n<\/head>\r\n\r\n<body>\r\n<div id=\"mainContainer\">\r\n\t<div id=\"gameContainer\">\r\n\t\t<div id=\"gameCanvasWrapper\">\r\n\t\t\t<canvas id=\"gameCanvas\"><\/canvas>\r\n\t\t<\/div>\r\n\r\n\t\t<!-- On canvas ad containers -->\r\n\t\t<div id=\"adContainerLoadingLeft\"> <!-- loading -->\r\n\t\t\t<div id=\"smashkarts-io_300x600_2\"><\/div> <!-- adinplay -->\r\n\t\t<\/div>\r\n\t\t<div id=\"adContainerMainMenu\"> <!-- main menu -->\r\n\t\t\t<div id=\"smashkarts-io_300x250\"><\/div> <!-- adinplay -->\r\n\r\n\t\t\t<!-- playwire -->\r\n\t\t\t<div id=\"pw_mainmenu\"><\/div>\r\n\t\t\t<!-- dummy placement to ensure rewarded videos init correctly when ads are disabled for season pass holders -->\r\n\t\t\t<div id=\"pw_mainmenu_dummy\" data-pw-desk=\"med_rect_atf\" data-pw-mobi=\"med_rect_atf\"><\/div>\r\n\t\t<\/div>\r\n\t\t<div id=\"adContainerWin\"> <!-- win ceremony -->\r\n\t\t\t<div id=\"smashkarts-io_300x250_2\"><\/div> <!-- adinplay -->\r\n\r\n\t\t\t<!-- playwire -->\r\n\t\t\t<div id=\"pw_roundend\"><\/div>\r\n\t\t\t<!-- <div data-pw-desk=\"med_rect_btf\" data-pw-mobi=\"med_rect_btf\"><\/div> -->\r\n\t\t<\/div>\r\n\t\t<div id=\"adContainerSpectate\"> <!-- spectate -->\r\n\t\t\t<div id=\"smashkarts-io_300x250_3\"><\/div> <!-- adinplay -->\r\n\t\t<\/div>\r\n\t\t<div id=\"adContainerDeath\"> <!-- death -->\r\n\r\n\t\t\t<!-- adinplay -->\r\n\t\t\t<div id=\"smashkarts-io_728x90-new\"><\/div>\r\n\t\t\t<div id=\"smashkarts-io_320x100\"><\/div>\r\n\r\n\t\t\t<!-- playwire -->\r\n\t\t\t<div id=\"pw_ondeath\"><\/div>\r\n\t\t\t<!-- <div data-pw-desk=\"leaderboard_atf\" data-pw-mobi=\"leaderboard_atf\"><\/div> -->\r\n\t\t<\/div>\r\n\t<\/div>\r\n\t<div id=\"pw-video-container\"> <!-- playwire -->\r\n\t\t<div id=\"pw-video-placeholder\"><\/div>\r\n\t<\/div>\r\n\t<div id=\"preroll\"><\/div> <!-- adinplay -->\r\n\t<iframe id=\"xsolla-iframe\"><\/iframe>\r\n<\/div>\r\n<div id=\"loader\">\r\n\t<img class=\"logo\" src=\"images\/smashkarts.png\">\r\n\t<div class=\"spinner\"><\/div>\r\n\t<div class=\"progress\">\r\n\t\t<div class=\"full\"><\/div>\r\n\t<\/div>\r\n<\/div>\r\n<div id=\"rotate-landscape\">\r\n\t<img src=\"images\/r.png\" class=\"center\">\r\n<\/div>\r\n\r\n<script src=\"https:\/\/www.gstatic.com\/firebasejs\/9.9.3\/firebase-app-compat.js\"><\/script>\r\n<script src=\"https:\/\/www.gstatic.com\/firebasejs\/9.9.3\/firebase-auth-compat.js\"><\/script>\r\n<script src=\"https:\/\/www.gstatic.com\/firebasejs\/9.9.3\/firebase-database-compat.js\"><\/script>\r\n<script src=\"https:\/\/www.gstatic.com\/firebasejs\/9.9.3\/firebase-analytics-compat.js\"><\/script>\r\n<script src=\"https:\/\/www.gstatic.com\/firebasejs\/9.9.3\/firebase-functions-compat.js\"><\/script>\r\n\r\n<script src=\"scripts\/main.js\"><\/script>\r\n<script src=\"scripts\/auth.js\"><\/script>\r\n<script src=\"scripts\/shop.js\"><\/script>\r\n<script src=\"scripts\/cc.js\"><\/script>\r\n \r\n<script src=\"scripts\/ads-common-logic.js\"><\/script>\r\n<!--<script src=\"scripts\/ads-offcanvas-logic.js\"><\/script>-->\r\n<script src=\"scripts\/ads-positioning-logic.js\"><\/script>\r\n<script src=\"scripts\/ads-injector.js\"><\/script>\r\n\r\n\r\n<script>\r\n\r\n\t\/\/Used for installing progressive web apps \r\n\tif ('serviceWorker' in navigator)\r\n\t{\r\n\t\tnavigator.serviceWorker.register('service-worker2.js');\r\n\t}\r\n\r\n\tconst firebaseConfig = {\r\n    apiKey: \"AIzaSyAdY2qq9083amKDS0R8tn2tjIKQB8mocco\",\r\n    authDomain: \"webgltest-17af1.firebaseapp.com\",\r\n    databaseURL: \"https:\/\/webgltest-17af1.firebaseio.com\",\r\n    projectId: \"webgltest-17af1\",\r\n    messagingSenderId: \"480659433590\",\r\n    appId: \"1:480659433590:web:a01ad1599e963843a0d757\",\r\n    measurementId: \"G-1W23DRFHK9\"\r\n};\r\n\r\n\t\r\n\t\/\/ Initialize Firebase\r\n\tfirebase.initializeApp(firebaseConfig);\r\n\r\n\t\r\n\r\n\tanalytics = firebase.analytics();\r\n\tgtag('config', 'G-1W23DRFHK9', {'cookie_flags': 'samesite=none;secure'}); \r\n\t\r\n\tfirebaseSetScreen(\"loading_start\");\r\n\tfirebaseLogEvent(\"loading_page_start\");\r\n\r\n\tupdateAdBlockDetected();\r\n\tupdateLoadingAdBanner();\r\n\t\r\n\tvar timerStart = Date.now();\r\n\tvar sentGameInstanceStartEvent = false;\r\n\r\n\t\/\/ choose the data file based on whether there's support for the ASTC texture compression format\r\n\tvar dataFile = \"\/cde9b7051535319df292526442914c36.data.br\";\r\n\tvar mobileDataFile = \"\/cde9b7051535319df292526442914c36.data.br\";\r\n\t\r\n\t\/\/safety check to ensure we dont try to use the mobileDataFile if the filename hasnt been parsed during the build phase\r\n\tif(!mobileDataFile.includes(\"MOBILE_DATA_FILENAME\"))\r\n\t{\r\n\t\tvar c = document.createElement(\"canvas\");\r\n\t\tvar gl = c.getContext(\"webgl\");\r\n\t\tvar gl2 = c.getContext(\"webgl2\");\r\n\t\tif ((gl && gl.getExtension('WEBGL_compressed_texture_astc')) || (gl2 && gl2.getExtension('WEBGL_compressed_texture_astc'))) \r\n\t\t{\r\n\t\t\tdataFile = mobileDataFile;\r\n\t\t}\r\n\t}\r\n\r\n\tconst buildUrl = \"Build\";\r\n\r\n\tconst loaderUrl = buildUrl + \"\/76f034cff49013ce85bd6945ebf32347.loader.js\";\r\n\tconst config = {\r\n\t\tdataUrl: buildUrl + dataFile,\r\n\t\tframeworkUrl: buildUrl + \"\/ed690d1402dd39fcf7abb15b99effdea.framework.js.br\",\r\n\t\tcodeUrl: buildUrl + \"\/250100c98afece1d27bb09b3a3d618ca.wasm.br\",\r\n\t\t\/\/ #if MEMORY_FILENAME\r\n\t\t\/\/         memoryUrl: buildUrl + \"\/\",\r\n\t\t\/\/ #endif\r\n\t\t\/\/ #if SYMBOLS_FILENAME\r\n\t\t\/\/         symbolsUrl: buildUrl + \"\/\",\r\n\t\t\/\/ #endif\r\n\t\tstreamingAssetsUrl: \"StreamingAssets\",\r\n\t\tcompanyName: \"TallTeam\",\r\n\t\tproductName: \"rr\",\r\n\t\tproductVersion: \"2.9.0\",\r\n\t};\r\n\r\n\tvar mainContainer = document.querySelector(\"#mainContainer\");\r\n\tvar gameContainer = document.querySelector(\"#gameContainer\");\r\n\tvar canvas = document.querySelector(\"#gameCanvas\");\r\n\tvar loadingBar = document.querySelector(\"#loader\");\r\n\tvar progressBarFull = document.querySelector(\"#loader .progress .full\");\r\n\tvar rotateLandscape = document.querySelector(\"#rotate-landscape\");\r\n\t\r\n\tif (isMobile())\r\n\t{\r\n\t\tmainContainer.className = \"unity-mobile\";\r\n\r\n\t\t\/\/ if(isIos())\r\n\t\t\/\/ {\r\n\t\t\/\/ \t\/\/Allow scrolling on mobile iOS so user can scroll off the top tab bar\r\n\t\t\/\/ \tdocument.body.style.overflow = \"visible\";\r\n\t\t\/\/ }\r\n\t}\r\n\telse\r\n\t{\r\n\t\trotateLandscape.id = \"rotateLandscapeOff\";\r\n\t\trotateLandscape.style.display = \"none\";\r\n\t}\r\n\tconst progress = document.querySelector(\"#loader .progress\");\r\n\tprogress.style.display = \"block\";\r\n\tprogressBarFull.style.width = \"0%\";\r\n\r\n\tvar script = document.createElement(\"script\");\r\n\tscript.src = loaderUrl;\r\n\r\n\tvar progressCreateUnityInstance = 0;\r\n\tvar progressPostCreateUnityInstance = 0;\r\n\tvar updateProgressInterval = setInterval(updateProgress, 100);\r\n\r\n\tvar gameInstance;\r\n\tscript.onload = () =>\r\n\t{\r\n\t\tcreateUnityInstance(canvas, config, (progress) =>\r\n\t\t{\r\n\t\t\tprogressCreateUnityInstance = 100 * progress;\r\n\t\t\tsetProgressWidth();\r\n\t\t}).then((unityInstance) =>\r\n\t\t{\r\n\t\t\tif (isMobile()) document.body.style.background = \"#000000\";\r\n\t\t\tloadingBar.style.display = \"none\";\r\n\t\t\twindow.unityGame = unityInstance;\r\n\t\t\tgameInstance = unityInstance;\r\n\r\n\t\t\tif (updateProgressInterval) clearInterval(updateProgressInterval);\r\n\r\n\t\t\tvar lt = Date.now() - timerStart;\r\n\t\t\tfirebaseLogEventWithParam(\"loading_page_complete\", \"time\", lt);\r\n\t\t\tsetV(lt);\r\n\r\n\t\t\tonUnityLoadComplete();\r\n\t\t}).catch((message) =>\r\n\t\t{\r\n\t\t\talert(\"TT UnityLoader Error\" + message);\r\n\t\t});\r\n\t};\r\n\tdocument.body.appendChild(script);\r\n\r\n\tfunction onUnityLoadComplete()\r\n\t{\r\n\t\t\/\/tell unity what ad providers are enabled\r\n\t\twindow.unityGame.SendMessage(unityFirebaseGameOjbectName, \"SetDisplayAdProvider\", displayAdProvider);\r\n\t\twindow.unityGame.SendMessage(unityFirebaseGameOjbectName, \"SetVideoAdProvider\", videoAdProvider);\r\n\t\t\r\n\t\ttrySendAdBlockDetectedMessage();\r\n\t}\r\n\r\n\tfunction updateProgress()\r\n\t{\r\n\t\tif (progressCreateUnityInstance > 85)\r\n\t\t{\r\n\t\t\tprogressPostCreateUnityInstance += 1;\r\n\t\t\tsetProgressWidth();\r\n\t\t}\r\n\t}\r\n\r\n\tfunction setProgressWidth()\r\n\t{\r\n\t\tif (progressCreateUnityInstance == 100.0)\r\n\t\t{\r\n\t\t\tprogressBarFull.style.width = \"100%\";\r\n\t\t}\r\n\t\telse\r\n\t\t{\r\n\t\t\tvar percent;\r\n\t\t\tif (isMobile())\r\n\t\t\t{\r\n\t\t\t\tpercent = progressCreateUnityInstance * 0.6 + (progressPostCreateUnityInstance * 0.5 * 0.2 + progressCreateUnityInstance * 0.5 * 0.2 * 0.05);\r\n\t\t\t\tpercent = Math.min(percent, 90);\r\n\t\t\t}\r\n\t\t\telse\r\n\t\t\t{\r\n\t\t\t\tpercent = progressCreateUnityInstance * 0.9 + progressPostCreateUnityInstance * 0.1;\r\n\t\t\t\tpercent = Math.min(percent, 95);\r\n\t\t\t}\r\n\t\t\tprogressBarFull.style.width = percent + \"%\";\r\n\t\t}\r\n\t}\r\n\r\n\tfunction setAdinPlaySubIdForABTest(val)\r\n\t{\r\n\t\t\/\/set adinplay subid which enables segmented daily reports\r\n\t\taiptag.subid = val;\r\n\t}\r\n\r\n<\/script>\r\n<\/body>\r\n<\/html>");
+document.close()
+
+
+});
+</script>
+</body>
 </html>
