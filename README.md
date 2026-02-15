@@ -1,7 +1,6 @@
 # NETLII
-/Netlii.png
 Welcome to Netlii, my flagship gaming website.
-
+<img width="1041" height="594" alt="Netlii" src="https://github.com/user-attachments/assets/f1ba43aa-c22b-457a-8f59-6f569c459091" />
 ## Why to use it?
 - games
 - movies
