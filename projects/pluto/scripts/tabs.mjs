@@ -246,7 +246,7 @@ async function addTab(link) {
   tabView.appendChild(tab.view);
   focusTab(tab);
 }
-  addTab("pluto.tv?t=h_q=");
+  addTab("pluto.tv");
 
 const urlParams = new URLSearchParams(window.location.search);
 
