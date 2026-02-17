@@ -51,7 +51,7 @@ pageRefresh.onclick = () => {
 };
 
 newTabButton.onclick = () => {
-  addTab("html.duckduckgo.com/html");
+  addTab("pluto.tv");
 };
 
 // Options (opt menu)
@@ -133,7 +133,7 @@ const tabItem = (tab) => {
             if (tabs.length) focusTab(tabs[tabs.length - 1]);
             else
               setTimeout(() => {
-                addTab("html.duckduckgo.com/html");
+                addTab("pluto.tv");
               }, 100);
           }
 
@@ -264,11 +264,11 @@ if (pendingSearch) {
     addTab("https://" + pendingSearch);
   } else {
     // 3. Otherwise, treat it as a DuckDuckGo search
-    addTab("html.duckduckgo.com/html?q=" + encodeURIComponent(pendingSearch));
+    addTab("pluto.tv?q=" + encodeURIComponent(pendingSearch));
   }
 } else {
   // Default behavior: load the search home
-  addTab("html.duckduckgo.com/html?t=h_q=");
+  addTab("pluto.tv?t=h_q=");
 }
 
 const urlParams = new URLSearchParams(window.location.search);
