@@ -247,7 +247,6 @@ async function addTab(link) {
   focusTab(tab);
 }
   addTab("tubitv.com");
-}
 
 const urlParams = new URLSearchParams(window.location.search);
 
