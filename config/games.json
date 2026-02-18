@@ -4,6 +4,11 @@
     "imgSrc": "projects/pluto/pluto.png",
     "title": "Pluto TV"
   },
+   {
+    "link": "projects/cmg/",
+    "imgSrc": "projects/cmg/Screenshot 2026-02-18 100828.png",
+    "title": "CoolMath Games"
+  },
   {
     "link": "projects/1/",
     "imgSrc": "projects/1/meta/apple-touch-icon.png",
