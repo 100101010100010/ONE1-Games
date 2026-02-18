@@ -1,16 +1,16 @@
 [
    {
-    "link": "scramjet/scramjet/https%3A%2F%2Fpluto.tv",
+    "link": "https://pluto.tv",
     "imgSrc": "projects/pluto/pluto.png",
     "title": "Pluto TV"
   },
    {
-    "link": "scramjet/scramjet/https%3A%2F%2Fcoolmathgames.com",
+    "link": "https://coolmathgames.com",
     "imgSrc": "projects/cmg/Screenshot 2026-02-18 100828.png",
     "title": "CoolMath Games"
   },
    {
-    "link": "scramjet/scramjet/https%3A%2F%2Fchatgpt.com",
+    "link": "https://chatgpt.com",
     "imgSrc": "projects/chatgpt/logo.png",
     "title": "ChatGPT"
   },
@@ -20,7 +20,7 @@
     "title": "Netflix"
   },
    {
-    "link": "scramjet/scramjet/https%3A%2F%2Fluna.amazon.com",
+    "link": "https://luna.amazon.com",
     "imgSrc": "projects/amazonluna/logo.png",
     "title": "Amazon Luna"
   },
@@ -30,7 +30,7 @@
     "title": "Scramjet Browser"
   },
     {
-    "link": "projects/y8games/",
+    "link": "https://y8.com",
     "imgSrc": "projects/y8games/logo.png",
     "title": "Y8 Games"
   },
