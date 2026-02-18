@@ -9,6 +9,21 @@
     "imgSrc": "projects/cmg/Screenshot 2026-02-18 100828.png",
     "title": "CoolMath Games"
   },
+   {
+    "link": "projects/chatgpt/",
+    "imgSrc": "projects/chatgpt/logo.png",
+    "title": "ChatGPT"
+  },
+   {
+    "link": "projects/netflix/",
+    "imgSrc": "projects/netflix/logo.png",
+    "title": "Netflix"
+  },
+   {
+    "link": "projects/amazonluna/",
+    "imgSrc": "projects/amazonluna/logo.png",
+    "title": "Amazon Luna"
+  },
   {
     "link": "projects/1/",
     "imgSrc": "projects/1/meta/apple-touch-icon.png",
