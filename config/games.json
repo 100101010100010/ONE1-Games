@@ -1,35 +1,5 @@
 [
    {
-    "link": "https://pluto.tv",
-    "imgSrc": "projects/pluto/pluto.png",
-    "title": "Pluto TV"
-  },
-   {
-    "link": "https://coolmathgames.com",
-    "imgSrc": "projects/cmg/Screenshot 2026-02-18 100828.png",
-    "title": "CoolMath Games"
-  },
-   {
-    "link": "https://chatgpt.com",
-    "imgSrc": "projects/chatgpt/logo.png",
-    "title": "ChatGPT"
-  },
-   {
-    "link": "https://netflix.com",
-    "imgSrc": "projects/netflix/logo.png",
-    "title": "Netflix"
-  },
-   {
-    "link": "https://luna.amazon.com",
-    "imgSrc": "projects/amazonluna/logo.png",
-    "title": "Amazon Luna"
-  },
-  {
-    "link": "scramjet/",
-    "imgSrc": "scramjet/Screenshot 2026-02-18 105915.png",
-    "title": "Scramjet Browser"
-  },
-   {
     "link": "projects/1/",
     "imgSrc": "projects/1/meta/apple-touch-icon.png",
     "title": "1"
