@@ -1,5 +1,10 @@
 [
    {
+    "link": "projects/Nexus-Proxy/",
+    "imgSrc": "projects/Nexus-Proxy/nexus.png",
+    "title": "Nexus Proxy"
+  },
+   {
     "link": "projects/1/",
     "imgSrc": "projects/1/meta/apple-touch-icon.png",
     "title": "1"
