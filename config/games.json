@@ -770,12 +770,7 @@
     "link": "projects/sm64/",
     "imgSrc": "projects/sm64/logo.png",
     "title": "Super Mario 64"
-  },
-  {
-    "link": "projects/smashkarts/",
-    "imgSrc": "projects/smashkarts/images/icon-512.png",
-    "title": "Smash Carts"
-  },
+  }
   {
     "link": "projects/smokingbarrels/",
     "imgSrc": "projects/smokingbarrels/smokingbarrels.jpg",
