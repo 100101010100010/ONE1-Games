@@ -1,5 +1,4 @@
 [
- {
    {
     "link": "projects/Nexus-Proxy/",
     "imgSrc": "projects/Nexus-Proxy/nexus.png",
@@ -771,7 +770,7 @@
     "link": "projects/sm64/",
     "imgSrc": "projects/sm64/logo.png",
     "title": "Super Mario 64"
-  }
+  },
   {
     "link": "projects/smokingbarrels/",
     "imgSrc": "projects/smokingbarrels/smokingbarrels.jpg",
