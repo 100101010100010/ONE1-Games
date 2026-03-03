@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;900&display=swap" rel="stylesheet">
+    <title>NETLII | Home</title>
+    <style>
+        /* UPDATED GLOBAL BACKGROUND STYLE */
+html, body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    font-family: 'Nunito', sans-serif;
+    background: url('netlii-bg.avif') no-repeat center center fixed;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #000; /* Monochrome text to match the new background */
+}
+        :root {
+            --text-color: #1a1a1a;
+            --container-bg: rgba(255, 255, 255, 0.75);
+            --accent: #000;
+        }
+
+        [data-theme="dark"] {
+            --text-color: #ffffff;
+            --container-bg: rgba(0, 0, 0, 0.7);
+            --accent: #fff;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', sans-serif;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            
+            /* Background Image Setup */
+            background-image: url('netlii-bg.avif');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            
+            transition: background-color 0.3s ease;
+        }
+
+        /* Dark/Lite Toggle in top right */
+        .theme-switch {
+            position: absolute;
+            top: 30px;
+            right: 40px;
+            text-align: center;
+            z-index: 10;
+        }
+
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 50px;
+            height: 26px;
+        }
+
+        .switch input { opacity: 0; width: 0; height: 0; }
+
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-color: #444;
+            transition: .4s;
+            border-radius: 34px;
+            border: 2px solid white;
+        }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 18px; width: 18px;
+            left: 3px; bottom: 2px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+
+        input:checked + .slider { background-color: #eee; }
+        input:checked + .slider:before { 
+            transform: translateX(23px); 
+            background-color: #222;
+        }
+
+        .toggle-label {
+            margin-top: 8px;
+            font-size: 12px;
+            font-weight: bold;
+            color: var(--text-color);
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+        }
+
+        /* Main UI Container */
+        .glass-panel {
+            background: var(--container-bg);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            padding: 60px;
+            border-radius: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            text-align: center;
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+            width: 80%;
+            max-width: 600px;
+        }
+
+        h1 {
+            font-family: 'Nunito', sans-serif;
+            font-size: 4rem;
+            margin: 0 0 20px 0;
+            letter-spacing: 12px;
+            color: var(--text-color);                        
+            font-weight: 900;
+        }
+
+        .search-bar {
+            width: 90%;
+            padding: 15px 25px;
+            border-radius: 50px;
+            border: 3px solid var(--text-color);
+            background: transparent;
+            color: var(--text-color);
+            font-size: 1.1rem;
+            margin-bottom: 40px;
+            outline: none;
+        }
+
+        .search-bar::placeholder {
+            color: var(--text-color);
+            opacity: 0.6;
+        }
+
+        /* Navigation icons */
+        .nav-row {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .nav-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            color: var(--text-color);
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .nav-item:hover { transform: translateY(-5px); }
+
+        .icon-circle {
+            width: 60px;
+            height: 60px;
+            border: 2px solid var(--text-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+
+        .icon-label {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+   <div class="glass-panel">
+        <h1>NETLII</h1>
+        <input type="text" id="home-search" class="search-bar" placeholder="Search">
+
+<script>
+  const homeSearch = document.getElementById('home-search');
+
+  homeSearch.addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') {
+      const query = homeSearch.value.trim();
+      if (query) {
+        // Store the search term temporarily in the browser's memory
+        localStorage.setItem('autoSearchQuery', query);
+        // Redirect to your unified browser page
+        window.location.href = '/active/'; 
+      }
+    }
+  });
+</script>
+       <div class="nav-row">
+            <a href="/projects" class="nav-item">
+                <div class="icon-circle">🎮</div>
+                <span class="icon-label">Games</span>
+            </a>
+
+            <a href="/apps" class="nav-item">
+                <div class="icon-circle">📱</div>
+                <span class="icon-label">Apps</span>
+            </a>
+
+            <a href="/misc" class="nav-item">
+                <div class="icon-circle">⚙️</div>
+                <span class="icon-label">Settings</span>
+            </a>
+
+            <a href="/movies/" class="nav-item">
+                <div class="icon-circle">🍿</div>
+                <span class="icon-label">Movies</span>
+            </a>
+        </div>
+    <script>
+// Inside home
+if (e.key === 'Enter') {
+  const query = homeSearch.value.trim();
+  if (query) {
+    localStorage.setItem('autoSearchQuery', query); // This key must match tabs.mjs
+    window.location.href = '/scramjet/'; // Or your active directory
+  }
+}
+    </script>
+</body>
+</html>
